@@ -27,6 +27,9 @@ script:
   # No parametrs run
   - ansible-playbook tests/test.yml -i tests/inventory --connection=local --sudo
 
+  # No application update run
+  - ansible-playbook tests/test.yml -i tests/inventory --connection=local --sudo --extra-vars "utils_upgrade_software=False"
+
   # Test role idempotence.
   - >
     ansible-playbook tests/test.yml -i tests/inventory --connection=local --sudo
