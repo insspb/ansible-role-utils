@@ -1,2 +1,27 @@
 ---
-# vars file for utils
+utils_list_basic:
+    - command-not-found
+    - dstat
+    - htop
+    - atop
+    - smem
+
+utils_list_network:
+    - curl
+    - iftop
+    - mtr
+    - tshark    
+    - nmap
+
+utils_list_filesystem: 
+    - iotop
+    - ncdu
+    - lsof
+    - tree
+
+utils_list_dev: 
+    - pstack
+    - strace
+    - ltrace
+    
+utils_list_user: []

@@ -8,6 +8,32 @@ Description
 
 This role installs some must-have utilities. Have several lists inside, so you can disable anything you want. 
 
+##### The list of basic utilities includes:
+- **command-not-found**: suggest installation of packages in interactive bash sessions
+- **dstat**: tool for generating system resource statistics
+- **htop**: interactive process viewer for Linux
+- **atop**: another interactive process viewer for Linux
+- **smem**: provides numerous reports on memory usage
+
+
+##### The list of network utilities includes:
+- **curl**: command line tool for transferring data with URL syntax
+- **iftop**: display bandwidth usage on an interface
+- **mtr**: a network diagnostic tool
+- **tshark**: dump and analyze network traffic
+- **nmap**: Security Scanner For Network Exploration & Hacking
+
+##### The list of file system utilities includes:
+- **iotop**: display io usage on behalf of which process on an interface
+- **ncdu**: interactive console disk usage visualizer
+- **lsof**: list open files
+- **tree**: recursive directory listing program
+
+##### The list of developer utilities includes:
+- **pstack**: attaches to the active processes named by the pids on the command line , and prints out an execution stack trace
+- **strace**: trace system calls and signals
+- **ltrace**: library call tracer
+
 Requirements
 ------------
 
@@ -16,7 +42,30 @@ No requiments yet.
 Role Variables
 --------------
 
-Nothing to describe yet. Please be patient.
+```yaml
+# Role behavior:
+utils_install_basic: True               # If set to true role will install basic tools list.
+utils_install_network: True             # If set to true role will install network tools list.
+utils_install_filesystem: True          # If set to true role will install file system tools list.
+utils_install_dev: False                # If set to true role will install developer tools list.
+utils_install_user: True                # If set to true role will install list of user configured packages
+
+# Role lists:
+utils_list_basic: []                    # Placeholder for list item. Look at vars/main.yml
+utils_list_network: []                  # Placeholder for list item. Look at vars/main.yml
+utils_list_filesystem: []               # Placeholder for list item. Look at vars/main.yml
+utils_list_dev: []                      # Placeholder for list item. Look at vars/main.yml
+utils_list_user: []                     # Placeholder for list item. Look at vars/main.yml
+
+# Apt behavior:
+utils_update_cache: True                # If set to true role will update application cache before execution.
+utils_upgrade_software: True            # If set to true role will upgrade installed soft
+utils_cache_valid: "3600"               # How long cache will be valid after update.
+utils_upgrade_type: "safe"              # Default upgrade type. You can use:
+                                        # If yes or safe, performs an aptitude safe-upgrade
+                                        # If full, performs an aptitude full-upgrade
+                                        # If dist, performs an apt-get dist-upgrade
+```
 
 Dependencies
 ------------
@@ -25,7 +74,11 @@ Independent role.
 
 Example Playbook
 ----------------
-
+```yaml
+- hosts: localhost
+  roles:
+    - { role: insspb.utils }
+```
 Development information
 ----------------
 This role is developed with community help. 
