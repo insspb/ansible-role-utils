@@ -15,7 +15,11 @@ This role installs some must-have utilities. Have several lists inside, so you c
 - **htop**: interactive process viewer for Linux
 - **atop**: another interactive process viewer for Linux
 - **smem**: provides numerous reports on memory usage
-
+- **unzip**: tool to unpack zip archives
+- **zip**: tool to pack zip archives
+- **gzip**: tool to work wih gzip archives
+- **bzip2**: tool to work wih bzip2 archives
+- **nano**: basic text editor
 
 ##### The list of network utilities includes:
 - **curl**: command line tool for transferring data with URL syntax
@@ -23,12 +27,14 @@ This role installs some must-have utilities. Have several lists inside, so you c
 - **mtr**: a network diagnostic tool
 - **tshark**: dump and analyze network traffic
 - **nmap**: Security Scanner For Network Exploration & Hacking
+- **wget**: Download manager
 
 ##### The list of file system utilities includes:
 - **iotop**: display io usage on behalf of which process on an interface
 - **ncdu**: interactive console disk usage visualizer
 - **lsof**: list open files
 - **tree**: recursive directory listing program
+- **mc**: old file manager
 
 ##### The list of developer utilities includes:
 - **pstack**: attaches to the active processes named by the pids on the command line , and prints out an execution stack trace

@@ -5,6 +5,11 @@ utils_list_basic:
     - htop
     - atop
     - smem
+    - unzip
+    - zip
+    - gzip
+    - bzip2
+    - nano
 
 utils_list_network:
     - curl
@@ -12,12 +17,14 @@ utils_list_network:
     - mtr
     - tshark    
     - nmap
+    - wget
 
 utils_list_filesystem: 
     - iotop
     - ncdu
     - lsof
     - tree
+    - mc
 
 utils_list_dev: 
     - pstack
