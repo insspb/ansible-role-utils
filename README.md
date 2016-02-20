@@ -1,7 +1,8 @@
 Ansible Role: Utils
 =========
-- Master branch: [![Build Status](https://travis-ci.org/insspb/ansible-role-utils.svg?branch=master)](https://travis-ci.org/insspb/ansible-role-utils)
-- Developer branch: [![Build Status](https://travis-ci.org/insspb/ansible-role-utils.svg?branch=develop)](https://travis-ci.org/insspb/ansible-role-utils)
+| Master branch | Developer branch | 
+|:---:|:---:|
+|[![Build Status](https://travis-ci.org/insspb/ansible-role-utils.svg?branch=master)](https://travis-ci.org/insspb/ansible-role-utils) | [![Build Status](https://travis-ci.org/insspb/ansible-role-utils.svg?branch=develop)](https://travis-ci.org/insspb/ansible-role-utils)|
 
 Description
 ------------
