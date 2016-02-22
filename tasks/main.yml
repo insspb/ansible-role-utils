@@ -1,39 +1,17 @@
-- name: Utils | Update apt cache
-  become: true
-  apt: update_cache=yes cache_valid_time={{ utils_cache_valid }}
-  when: utils_update_cache
+- name: Utils | Including playbook for RedHat operating systems.
+  include: RedHat.yml
+  when: ansible_os_family == "RedHat"
 
-- name: Utils | Update all installed software on server
-  become: true
-  apt: upgrade={{ utils_upgrade_type }}
-  when: utils_upgrade_software
+- name: Utils | Including playbook for Ubuntu operating systems.
+  include: Ubuntu.yml
+  when: ansible_os_family == "Ubuntu"
 
-- name: Utils | Install basic utilities
-  become: true
-  apt: pkg="{{ item }}" state=present
-  when: utils_install_basic
-  with_items: utils_list_basic
+- name: Utils | Including playbook for Debian 7 operating systems.
+  include: Debian-7.yml
+  when: ansible_os_family == "Debian"
+        and ansible_distribution_major_version == "7"
 
-- name: Utils | Install network utilities
-  become: true
-  apt: pkg="{{ item }}" state=present
-  when: utils_install_network
-  with_items: utils_list_network
-
-- name: Utils | Install file system utilities
-  become: true
-  apt: pkg="{{ item }}" state=present
-  when: utils_install_filesystem
-  with_items: utils_list_filesystem
-
-- name: Utils | Install other utilities
-  become: true
-  apt: pkg="{{ item }}" state=present
-  when: utils_install_dev
-  with_items: utils_list_dev
-
-- name: Utils | Install user utilities
-  become: true
-  apt: pkg="{{ item }}" state=present
-  when: utils_install_user
-  with_items: utils_list_user
+- name: Utils | Including playbook for Debian 8 operating systems.
+  include: Debian-8.yml
+  when: ansible_os_family == "Debian"
+        and ansible_distribution_major_version == "8"
