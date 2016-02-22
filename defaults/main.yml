@@ -13,6 +13,13 @@ utils_list_filesystem: []               # Placeholder for list item. Look at var
 utils_list_dev: []                      # Placeholder for list item. Look at vars/main.yml
 utils_list_user: []                     # Placeholder for list item. Look at vars/main.yml
 
+# Role lists for RedHat:
+utils_list_redhat_basic: []                    # Placeholder for list item. Look at vars/main.yml
+utils_list_redhat_network: []                  # Placeholder for list item. Look at vars/main.yml
+utils_list_redhat_filesystem: []               # Placeholder for list item. Look at vars/main.yml
+utils_list_redhat_dev: []                      # Placeholder for list item. Look at vars/main.yml
+utils_list_redhat_user: []                     # Placeholder for list item. Look at vars/main.yml
+
 # Apt behavior:
 utils_update_cache: True                # If set to true role will update application cache before execution.
 utils_upgrade_software: True            # If set to true role will upgrade installed soft

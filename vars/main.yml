@@ -1,4 +1,7 @@
 ---
+utils_list_debian8_prerequisites:
+    - aptitude
+
 utils_list_basic:
     - command-not-found
     - dstat
@@ -33,3 +36,36 @@ utils_list_dev:
     - ltrace
     
 utils_list_user: []
+
+utils_list_redhat_basic:
+    - dstat
+    - htop
+    - atop
+    - smem
+    - unzip
+    - zip
+    - gzip
+    - bzip2
+    - nano
+
+utils_list_redhat_network:
+    - curl
+    - iftop
+    - mtr
+    - wireshark
+    - nmap
+    - wget
+
+utils_list_redhat_filesystem: 
+    - iotop
+    - ncdu
+    - lsof
+    - tree
+    - mc
+
+utils_list_redhat_dev: 
+    - pstack
+    - strace
+    - ltrace
+    
+utils_list_redhat_user: []
