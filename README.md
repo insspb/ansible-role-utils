@@ -20,6 +20,7 @@ This role installs some must-have utilities. Have several lists inside, so you c
 - **gzip**: tool to work wih gzip archives
 - **bzip2**: tool to work wih bzip2 archives
 - **nano**: basic text editor
+- **vim**: advanced text editor
 
 ##### The list of network utilities includes:
 - **curl**: command line tool for transferring data with URL syntax
@@ -40,6 +41,13 @@ This role installs some must-have utilities. Have several lists inside, so you c
 - **pstack**: attaches to the active processes named by the pids on the command line , and prints out an execution stack trace
 - **strace**: trace system calls and signals
 - **ltrace**: library call tracer
+
+Platforms:
+------------
+ - CentOS
+ - RedHat
+ - Debian
+ - Ubuntu
 
 Requirements
 ------------
@@ -90,16 +98,17 @@ Development information
 ----------------
 This role is developed with community help. 
 Process of development follows this rule: 
-- You are free to add any pool request to develop branch. All request will be answered in timely manner. 
-- If you want to made any contribution, but do not know where to start - check issues.
-- Master branch updated just after significant changes in develop.
-- Please include documentation for new features. 
-- Please use variables.
-- Please do not forget to set defaults.
-- Please do your best to keep backward compatibility if possible.
-- Please use packet installation as default software installation method. Source installation must be optional anywhere if possible.
-- Please use official software developers repositories instead of general Debian/Ubuntu/Centos etc. 
-- Do you best to keep role independent from any other roles. User must have the way to choose what roles to use.
+
+ - You are free to add any pool request to develop branch. All request will be answered in timely manner. 
+ - If you want to made any contribution, but do not know where to start - check issues.
+ - Master branch updated just after significant changes in develop.
+ - Please include documentation for new features. 
+ - Please use variables.
+ - Please do not forget to set defaults.
+ - Please do your best to keep backward compatibility if possible.
+ - Please use packet installation as default software installation method. Source installation must be optional anywhere if possible.
+ - Please use official software developers repositories instead of general Debian/Ubuntu/Centos etc. 
+ - Do you best to keep role independent from any other roles. User must have the way to choose what roles to use.
 
 License
 -------
