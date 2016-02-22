@@ -10,6 +10,7 @@ utils_list_basic:
     - gzip
     - bzip2
     - nano
+    - vim
 
 utils_list_network:
     - curl
