@@ -47,6 +47,7 @@ utils_list_redhat_basic:
     - gzip
     - bzip2
     - nano
+    - vim
 
 utils_list_redhat_network:
     - curl

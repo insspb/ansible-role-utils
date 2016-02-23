@@ -10,7 +10,7 @@ Description
 This role installs some must-have utilities. Have several lists inside, so you can disable anything you want. 
 
 ##### The list of basic utilities includes:
-- **command-not-found**: suggest installation of packages in interactive bash sessions
+- **command-not-found**: suggest installation of packages in interactive bash sessions **Not available on CentOS**
 - **dstat**: tool for generating system resource statistics
 - **htop**: interactive process viewer for Linux
 - **atop**: another interactive process viewer for Linux
@@ -20,7 +20,7 @@ This role installs some must-have utilities. Have several lists inside, so you c
 - **gzip**: tool to work wih gzip archives
 - **bzip2**: tool to work wih bzip2 archives
 - **nano**: basic text editor
-- **vim**: advanced text editor
+- **vim**: advanced text editor **Failed on CentOS 5 (already installed as vi)**
 
 ##### The list of network utilities includes:
 - **curl**: command line tool for transferring data with URL syntax

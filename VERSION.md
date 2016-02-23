@@ -7,6 +7,12 @@ Ansible Role: Utils
 Versions:
 ------------
 
+##### v2.0:
+ - Debian support, tests passed
+ - Centos support, tests passed
+ - Epel repository install on CentOS systems
+ - RepoForge repository install on CentOS 5 systems
+
 ##### v1.0:
  - Ubuntu support, tests passed
  - System updates included
