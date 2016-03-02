@@ -29,6 +29,7 @@ This role installs some must-have utilities. Have several lists inside, so you c
 - **tshark**: dump and analyze network traffic
 - **nmap**: Security Scanner For Network Exploration & Hacking
 - **wget**: Download manager
+- **telnet**: This is telnet
 
 ##### The list of file system utilities includes:
 - **iotop**: display io usage on behalf of which process on an interface

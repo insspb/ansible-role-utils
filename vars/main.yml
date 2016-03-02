@@ -22,6 +22,7 @@ utils_list_network:
     - tshark    
     - nmap
     - wget
+    - telnet
 
 utils_list_filesystem: 
     - iotop
