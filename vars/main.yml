@@ -14,6 +14,7 @@ utils_list_basic:
     - bzip2
     - nano
     - vim
+    - git
 
 utils_list_network:
     - curl
@@ -49,6 +50,7 @@ utils_list_redhat_basic:
     - bzip2
     - nano
     - vim
+    - git
 
 utils_list_redhat_network:
     - curl

@@ -21,6 +21,7 @@ This role installs some must-have utilities. Have several lists inside, so you c
 - **bzip2**: tool to work wih bzip2 archives
 - **nano**: basic text editor
 - **vim**: advanced text editor **Failed on CentOS 5 (already installed as vi)**
+- **git**: git distributed version control system, mainly to work with github.com
 
 ##### The list of network utilities includes:
 - **curl**: command line tool for transferring data with URL syntax
