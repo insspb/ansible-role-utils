@@ -1,5 +1,5 @@
 - name: Utils | RedHat | Install Epel repository
-  yum: state=latest name=epel-release
+  yum: state=latest name=epel-release disable_gpg_check=yes
 
 - name: Utils | RedHat | Install RepoForge repository
   yum: disable_gpg_check=yes state=present name="http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.3-1.el5.rf.{{ ansible_architecture }}.rpm"
