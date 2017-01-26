@@ -71,5 +71,8 @@ utils_list_redhat_dev:
     - pstack
     - strace
     - ltrace
+
+utils_list_redhat7_system:
+    - net-tools
     
 utils_list_redhat_user: []

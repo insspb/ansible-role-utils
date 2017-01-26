@@ -34,6 +34,12 @@
   with_items: "{{ utils_list_redhat_dev }}"
   ignore_errors: yes
 
+- name: Utils | RedHat | Install CentOs 7 system utilities
+  yum: name="{{ item }}" state=present
+  when: ("{{ utils_install_redhat7_system }}" and "{{ ansible_distribution }}" == "CentOS")
+  with_items: "{{ utils_list_redhat7_system }}"
+  ignore_errors: yes
+
 - name: Utils | RedHat | Install user utilities
   yum: name="{{ item }}" state=present
   when: "{{ utils_install_user }}"

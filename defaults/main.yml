@@ -4,6 +4,7 @@ utils_install_basic: True               # If set to true role will install basic
 utils_install_network: True             # If set to true role will install network tools list.
 utils_install_filesystem: True          # If set to true role will install file system tools list.
 utils_install_dev: False                # If set to true role will install developer tools list.
+utils_install_redhat7_system: True      # If set to true role will install list of some old packages from CentOS 6 for CentOS 7
 utils_install_user: True                # If set to true role will install list of user configured packages
 
 # Role lists:
@@ -18,6 +19,7 @@ utils_list_redhat_basic: []                    # Placeholder for list item. Look
 utils_list_redhat_network: []                  # Placeholder for list item. Look at vars/main.yml
 utils_list_redhat_filesystem: []               # Placeholder for list item. Look at vars/main.yml
 utils_list_redhat_dev: []                      # Placeholder for list item. Look at vars/main.yml
+utils_list_redhat7_system: []                     # Placeholder for list item. Look at vars/main.yml
 utils_list_redhat_user: []                     # Placeholder for list item. Look at vars/main.yml
 
 # Apt behavior:
