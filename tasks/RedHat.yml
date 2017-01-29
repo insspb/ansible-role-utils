@@ -1,5 +1,12 @@
+- name: Utils | RedHat | Install Epel repository gpg key
+  rpm_key:
+    state: present
+    key: https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-{{ ansible_distribution_major_version }}
+
 - name: Utils | RedHat | Install Epel repository
-  yum: state=latest name=epel-release disable_gpg_check=yes
+  yum:
+    state: latest
+    name: epel-release
 
 - name: Utils | RedHat | Install RepoForge repository
   yum: disable_gpg_check=yes state=present name="http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.3-1.el5.rf.{{ ansible_architecture }}.rpm"
