@@ -9,46 +9,66 @@
     name: epel-release
 
 - name: Utils | RedHat | Install RepoForge repository
-  yum: disable_gpg_check=yes state=present name="http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.3-1.el5.rf.{{ ansible_architecture }}.rpm"
-  when: ("{{ utils_upgrade_software }}"
-        and "{{ ansible_distribution_major_version }}" == "5")
+  yum:
+    disable_gpg_check: yes
+    state: present
+    name: "http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.3-1.el5.rf.{{ ansible_architecture }}.rpm"
+  when:
+    - "{{ utils_upgrade_software }}"
+    - ("{{ ansible_distribution_major_version }}" == "5")
 
 - name: Utils | RedHat | Update all installed software on server
-  yum: state=latest name="*"
+  yum:
+    state: latest
+    name: "*"
   when: "{{ utils_upgrade_software }}"
 
 - name: Utils | RedHat | Install basic utilities
-  yum: name="{{ item }}" state=present
+  yum:
+    name: "{{ item }}"
+    state: present
   when: "{{ utils_install_basic }}"
   with_items: "{{ utils_list_redhat_basic }}"
   ignore_errors: yes
 
 - name: Utils | RedHat | Install network utilities
-  yum: name="{{ item }}" state=present
+  yum:
+    name: "{{ item }}"
+    state: present
   when: "{{ utils_install_network }}"
   with_items: "{{ utils_list_redhat_network }}"
   ignore_errors: yes
 
 - name: Utils | RedHat | Install file system utilities
-  yum: name="{{ item }}" state=present
+  yum:
+    name: "{{ item }}"
+    stat: present
   when: "{{ utils_install_filesystem }}"
   with_items: "{{ utils_list_redhat_filesystem }}"
   ignore_errors: yes
 
 - name: Utils | RedHat | Install other utilities
-  yum: name="{{ item }}" state=present
+  yum:
+    name: "{{ item }}"
+    state: present
   when: "{{ utils_install_dev }}"
   with_items: "{{ utils_list_redhat_dev }}"
   ignore_errors: yes
 
 - name: Utils | RedHat | Install CentOs 7 system utilities
-  yum: name="{{ item }}" state=present
-  when: ("{{ utils_install_redhat7_system }}" and "{{ ansible_distribution }}" == "CentOS")
+  yum:
+    name: "{{ item }}"
+    state: present
+  when:
+    - "{{ utils_install_redhat7_system }}"
+    - ("{{ ansible_distribution }}" == "CentOS")
   with_items: "{{ utils_list_redhat7_system }}"
   ignore_errors: yes
 
 - name: Utils | RedHat | Install user utilities
-  yum: name="{{ item }}" state=present
+  yum:
+    name: "{{ item }}"
+    state: present
   when: "{{ utils_install_user }}"
   with_items: "{{ utils_list_redhat_user }}"
   ignore_errors: yes
