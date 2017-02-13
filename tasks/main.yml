@@ -4,4 +4,8 @@
 
 - name: Utils | Including playbook for Debian operating systems.
   include: Debian.yml
-  when: ansible_os_family == "Debian"
+  when: ansible_distribution == "Debian"
+
+- name: Utils | Including playbook for Ubuntu operating systems.
+  include: Ubuntu.yml
+  when: ansible_distribution == "Ubuntu"

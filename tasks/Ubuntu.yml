@@ -1,0 +1,67 @@
+- name: Utils | Ubuntu | Update apt cache
+  become: true
+  become_method: sudo
+  apt:
+    update_cache: yes
+    cache_valid_time: "{{ utils_cache_valid }}"
+  when: "{{ utils_update_cache }}"
+
+- name: Utils | Ubuntu | Install prerequisites utilities
+  become: true
+  become_method: sudo
+  apt:
+    pkg: "{{ item }}"
+    state: present
+  with_items: "{{ utils_list_debian8_prerequisites }}"
+
+- name: Utils | Ubuntu | Update all installed software on server
+  become: true
+  become_method: sudo
+  apt:
+    upgrade: "{{ utils_upgrade_type }}"
+  when: "{{ utils_upgrade_software }}"
+
+- name: Utils | Ubuntu | Install basic utilities
+  become: true
+  become_method: sudo
+  apt:
+    pkg: "{{ item }}"
+    state: present
+  when: "{{ utils_install_basic }}"
+  with_items: "{{ utils_list_basic }}"
+
+- name: Utils | Ubuntu | Install network utilities
+  become: true
+  become_method: sudo
+  apt:
+    pkg: "{{ item }}"
+    state: present
+  when: "{{ utils_install_network }}"
+  with_items: "{{ utils_list_network }}"
+
+- name: Utils | Ubuntu | Install file system utilities
+  become: true
+  become_method: sudo
+  apt:
+    pkg: "{{ item }}"
+    state: present
+  when: "{{ utils_install_filesystem }}"
+  with_items: "{{ utils_list_filesystem }}"
+
+- name: Utils | Ubuntu | Install other utilities
+  become: true
+  become_method: sudo
+  apt:
+    pkg: "{{ item }}"
+    state: present
+  when: "{{ utils_install_dev }}"
+  with_items: "{{ utils_list_dev }}"
+
+- name: Utils | Ubuntu | Install user utilities
+  become: true
+  become_method: sudo
+  apt:
+    pkg: "{{ item }}"
+    state: present
+  when: "{{ utils_install_user }}"
+  with_items: "{{ utils_list_user }}"
