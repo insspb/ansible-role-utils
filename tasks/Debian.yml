@@ -1,3 +1,5 @@
+- include_vars: "{{ ansible_distribution }}.yml"
+
 - name: Utils | Debian | Update apt cache
   become: true
   become_method: su
@@ -12,8 +14,7 @@
   apt:
     pkg: "{{ item }}"
     state: present
-  with_items: "{{ utils_list_debian8_prerequisites }}"
-  when: ("{{ ansible_distribution_major_version }}" == "8")
+  with_items: "{{ utils_list_prerequisites }}"
 
 - name: Utils | Debian | Update all installed software on server
   become: true

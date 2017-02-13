@@ -1,14 +1,19 @@
+- include_vars: "{{ ansible_os_family }}.yml"
+
 - name: Utils | RedHat | Install Epel repository gpg key
+  become: True
   rpm_key:
     state: present
     key: https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-{{ ansible_distribution_major_version }}
 
 - name: Utils | RedHat | Install Epel repository
+  become: True
   yum:
     state: latest
     name: epel-release
 
 - name: Utils | RedHat | Install RepoForge repository
+  become: True
   yum:
     disable_gpg_check: yes
     state: present
@@ -18,44 +23,50 @@
     - ("{{ ansible_distribution_major_version }}" == "5")
 
 - name: Utils | RedHat | Update all installed software on server
+  become: True
   yum:
     state: latest
     name: "*"
   when: "{{ utils_upgrade_software }}"
 
 - name: Utils | RedHat | Install basic utilities
+  become: True
   yum:
     name: "{{ item }}"
     state: present
   when: "{{ utils_install_basic }}"
-  with_items: "{{ utils_list_redhat_basic }}"
+  with_items: "{{ utils_list_basic }}"
   ignore_errors: yes
 
 - name: Utils | RedHat | Install network utilities
+  become: True
   yum:
     name: "{{ item }}"
     state: present
   when: "{{ utils_install_network }}"
-  with_items: "{{ utils_list_redhat_network }}"
+  with_items: "{{ utils_list_network }}"
   ignore_errors: yes
 
 - name: Utils | RedHat | Install file system utilities
+  become: True
   yum:
     name: "{{ item }}"
-    stat: present
+    state: present
   when: "{{ utils_install_filesystem }}"
-  with_items: "{{ utils_list_redhat_filesystem }}"
+  with_items: "{{ utils_list_filesystem }}"
   ignore_errors: yes
 
 - name: Utils | RedHat | Install other utilities
+  become: True
   yum:
     name: "{{ item }}"
     state: present
   when: "{{ utils_install_dev }}"
-  with_items: "{{ utils_list_redhat_dev }}"
+  with_items: "{{ utils_list_dev }}"
   ignore_errors: yes
 
 - name: Utils | RedHat | Install CentOs 7 system utilities
+  become: True
   yum:
     name: "{{ item }}"
     state: present
@@ -66,9 +77,10 @@
   ignore_errors: yes
 
 - name: Utils | RedHat | Install user utilities
+  become: True
   yum:
     name: "{{ item }}"
     state: present
   when: "{{ utils_install_user }}"
-  with_items: "{{ utils_list_redhat_user }}"
+  with_items: "{{ utils_list_user }}"
   ignore_errors: yes

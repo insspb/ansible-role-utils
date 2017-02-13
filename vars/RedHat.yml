@@ -1,0 +1,39 @@
+---
+utils_list_basic:
+    - dstat
+    - htop
+    - atop
+    - smem
+    - unzip
+    - zip
+    - gzip
+    - bzip2
+    - nano
+    - vim
+    - git
+    - bash-completion
+
+utils_list_network:
+    - curl
+    - iftop
+    - mtr
+    - wireshark
+    - nmap
+    - wget
+
+utils_list_filesystem: 
+    - iotop
+    - ncdu
+    - lsof
+    - tree
+    - mc
+
+utils_list_dev: 
+    - pstack
+    - strace
+    - ltrace
+
+utils_list_redhat7_system:
+    - net-tools
+    
+utils_list_user: []

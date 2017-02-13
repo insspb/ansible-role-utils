@@ -1,0 +1,40 @@
+---
+utils_list_prerequisites:
+    - aptitude
+
+utils_list_basic:
+    - command-not-found
+    - dstat
+    - htop
+    - atop
+    - smem
+    - unzip
+    - zip
+    - gzip
+    - bzip2
+    - nano
+    - vim
+    - git
+
+utils_list_network:
+    - curl
+    - iftop
+    - mtr
+    - tshark    
+    - nmap
+    - wget
+    - telnet
+
+utils_list_filesystem: 
+    - iotop
+    - ncdu
+    - lsof
+    - tree
+    - mc
+
+utils_list_dev: 
+    - pstack
+    - strace
+    - ltrace
+    
+utils_list_user: []
