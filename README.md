@@ -7,7 +7,7 @@ Ansible Role: Utils
 Description
 ------------
 
-This role installs some must-have utilities. Have several lists inside, so you can disable anything you want. 
+This role installs some must-have utilities. Have several lists inside, so you can enable or disable anything you want. 
 
 ##### The list of basic utilities includes:
 - **command-not-found**: suggest installation of packages in interactive bash sessions **Not available on CentOS**
@@ -22,6 +22,7 @@ This role installs some must-have utilities. Have several lists inside, so you c
 - **nano**: basic text editor
 - **vim**: advanced text editor **Failed on CentOS 5 (already installed as vi)**
 - **git**: git distributed version control system, mainly to work with github.com
+- **bash-completion**: Bash command line autocompletion, like in Ubuntu (Added for RedHat playbook only).
 
 ##### The list of network utilities includes:
 - **curl**: command line tool for transferring data with URL syntax
@@ -44,6 +45,9 @@ This role installs some must-have utilities. Have several lists inside, so you c
 - **strace**: trace system calls and signals
 - **ltrace**: library call tracer
 
+##### The list of backward compatibility in CentOS7
+- **net-tools**: add ipconfig command to CentOs7
+
 Platforms:
 ------------
  - CentOS
@@ -65,6 +69,7 @@ utils_install_basic: True               # If set to true role will install basic
 utils_install_network: True             # If set to true role will install network tools list.
 utils_install_filesystem: True          # If set to true role will install file system tools list.
 utils_install_dev: False                # If set to true role will install developer tools list.
+utils_install_redhat7_system: True      # If set to true role will install list of some old packages from CentOS 6 for CentOS 7
 utils_install_user: True                # If set to true role will install list of user configured packages
 
 # Role lists:
@@ -72,6 +77,7 @@ utils_list_basic: []                    # Placeholder for list item. Look at var
 utils_list_network: []                  # Placeholder for list item. Look at vars/main.yml
 utils_list_filesystem: []               # Placeholder for list item. Look at vars/main.yml
 utils_list_dev: []                      # Placeholder for list item. Look at vars/main.yml
+utils_list_redhat7_system: []           # Placeholder for list item. Look at vars/main.yml
 utils_list_user: []                     # Placeholder for list item. Look at vars/main.yml
 
 # Apt behavior:
@@ -91,8 +97,11 @@ Independent role.
 
 Example Playbook
 ----------------
+
+This role execution can take a lot of time. It is recommended to use [free ansible playbook strategy](http://docs.ansible.com/ansible/playbooks_strategies.html) if possible.
 ```yaml
 - hosts: localhost
+  strategy: free
   roles:
     - { role: insspb.utils }
 ```
