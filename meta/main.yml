@@ -1,14 +1,13 @@
 galaxy_info:
   author: Andrey Shpak
   description: Installs some must-have utilities. Have several lists inside, so you can disable anything you want. 
-  company: 
-  
+  company:
   license: license (MIT)
-  
-  min_ansible_version: 1.9.4
+
+  min_ansible_version: 2.4.0
 
   github_branch: master
-  
+
   platforms:
   - name: EL
     versions:
@@ -19,8 +18,8 @@ galaxy_info:
   - name: Debian
     versions:
     - all
-  
-  galaxy_tags: 
+
+  galaxy_tags:
      - epel
      - system
      - utilities
