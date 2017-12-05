@@ -6,7 +6,7 @@
   apt:
     update_cache: yes
     cache_valid_time: "{{ utils_cache_valid }}"
-  when: "{{ utils_update_cache }}"
+  when: utils_update_cache
 
 - name: Utils | Debian 8 | Install prerequisites utilities
   become: true
@@ -21,7 +21,7 @@
   become_method: su
   apt:
     upgrade: "{{ utils_upgrade_type }}"
-  when: "{{ utils_upgrade_software }}"
+  when: utils_upgrade_software
 
 - name: Utils | Debian | Install basic utilities
   become: true
@@ -29,7 +29,7 @@
   apt:
     pkg: "{{ item }}"
     state: present
-  when: "{{ utils_install_basic }}"
+  when: utils_install_basic
   with_items: "{{ utils_list_basic }}"
 
 - name: Utils | Debian | Install network utilities
@@ -38,7 +38,7 @@
   apt:
     pkg: "{{ item }}"
     state: present
-  when: "{{ utils_install_network }}"
+  when: utils_install_network
   with_items: "{{ utils_list_network }}"
 
 - name: Utils | Debian | Install file system utilities
@@ -47,7 +47,7 @@
   apt:
     pkg: "{{ item }}"
     state: present
-  when: "{{ utils_install_filesystem }}"
+  when: utils_install_filesystem
   with_items: "{{ utils_list_filesystem }}"
 
 - name: Utils | Debian | Install other utilities
@@ -56,7 +56,7 @@
   apt:
     pkg: "{{ item }}"
     state: present
-  when: "{{ utils_install_dev }}"
+  when: utils_install_dev
   with_items: "{{ utils_list_dev }}"
 
 - name: Utils | Debian | Install user utilities
@@ -65,5 +65,5 @@
   apt:
     pkg: "{{ item }}"
     state: present
-  when: "{{ utils_install_user }}"
+  when: utils_install_user
   with_items: "{{ utils_list_user }}"

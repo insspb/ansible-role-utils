@@ -19,22 +19,22 @@
     state: present
     name: "http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.3-1.el5.rf.{{ ansible_architecture }}.rpm"
   when:
-    - "{{ utils_upgrade_software }}"
-    - ("{{ ansible_distribution_major_version }}" == "5")
+    - utils_upgrade_software
+    - ansible_distribution_major_version == "5"
 
 - name: Utils | RedHat | Update all installed software on server
   become: True
   yum:
     state: latest
     name: "*"
-  when: "{{ utils_upgrade_software }}"
+  when: utils_upgrade_software
 
 - name: Utils | RedHat | Install basic utilities
   become: True
   yum:
     name: "{{ item }}"
     state: present
-  when: "{{ utils_install_basic }}"
+  when: utils_install_basic
   with_items: "{{ utils_list_basic }}"
   ignore_errors: yes
 
@@ -43,7 +43,7 @@
   yum:
     name: "{{ item }}"
     state: present
-  when: "{{ utils_install_network }}"
+  when: utils_install_network
   with_items: "{{ utils_list_network }}"
   ignore_errors: yes
 
@@ -52,7 +52,7 @@
   yum:
     name: "{{ item }}"
     state: present
-  when: "{{ utils_install_filesystem }}"
+  when: utils_install_filesystem
   with_items: "{{ utils_list_filesystem }}"
   ignore_errors: yes
 
@@ -61,7 +61,7 @@
   yum:
     name: "{{ item }}"
     state: present
-  when: "{{ utils_install_dev }}"
+  when: utils_install_dev
   with_items: "{{ utils_list_dev }}"
   ignore_errors: yes
 
@@ -71,8 +71,8 @@
     name: "{{ item }}"
     state: present
   when:
-    - "{{ utils_install_redhat7_system }}"
-    - ("{{ ansible_distribution }}" == "CentOS")
+    - utils_install_redhat7_system
+    - ansible_distribution == "CentOS"
   with_items: "{{ utils_list_redhat7_system }}"
   ignore_errors: yes
 
@@ -81,6 +81,6 @@
   yum:
     name: "{{ item }}"
     state: present
-  when: "{{ utils_install_user }}"
+  when: utils_install_user
   with_items: "{{ utils_list_user }}"
   ignore_errors: yes

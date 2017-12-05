@@ -1,11 +1,11 @@
 - name: Utils | Including playbook for RedHat operating systems.
-  include: RedHat.yml
+  include_tasks: RedHat.yml
   when: ansible_os_family == "RedHat"
 
 - name: Utils | Including playbook for Debian operating systems.
-  include: Debian.yml
+  include_tasks: Debian.yml
   when: ansible_distribution == "Debian"
 
 - name: Utils | Including playbook for Ubuntu operating systems.
-  include: Ubuntu.yml
+  include_tasks: Ubuntu.yml
   when: ansible_distribution == "Ubuntu"
